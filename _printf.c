@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 #define BUFF_SIZE 1024
 
@@ -130,7 +131,7 @@ void print_buffer(char buffer[], int *buff_ind)
 {
     if (*buff_ind > 0)
     {
-        fwrite(buffer, 1, *buff_ind, stdout);
+        write(STDOUT_FILENO, buffer, *buff_ind);
     }
 
     *buff_ind = 0;
