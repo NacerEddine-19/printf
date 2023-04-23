@@ -117,6 +117,7 @@ int _printf(const char *format, ...)
     print_buffer(buffer, &buff_ind);
 
     va_end(args);
+    free(buffer);
 
     return count;
 }
@@ -130,7 +131,7 @@ void print_buffer(char buffer[], int *buff_ind)
 {
     if (*buff_ind > 0)
     {
-        fwrite(buffer, 1, *buff_ind, stdout);
+        write(buffer, 1, *buff_ind, stdout);
     }
 
     *buff_ind = 0;
