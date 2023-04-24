@@ -131,7 +131,11 @@ void print_buffer(char buffer[], int *buff_ind)
 {
     if (*buff_ind > 0)
     {
-        write(STDOUT_FILENO, buffer, *buff_ind);
+        ssize_t n_written = write(STDOUT_FILENO, buffer, *buff_ind);
+        if (n_written != *buff_ind)
+        {
+            fwrite(buffer + n_written, 1, *buff_ind - n_written, stdout);
+        }
     }
 
     *buff_ind = 0;
