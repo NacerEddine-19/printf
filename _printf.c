@@ -140,3 +140,11 @@ void print_buffer(char buffer[], int *buff_ind)
 
     *buff_ind = 0;
 }
+
+int main()
+{
+    _printf("Hello, %s!\n", "world");
+    _printf("The answer is %d%%.\n", 42);
+    _printf("The character '%c' has ASCII code %d.\n", 'A', 'A');
+    return 0;
+}
