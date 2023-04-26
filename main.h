@@ -40,7 +40,8 @@ struct fmt
 			int,
 			int,
 			int,
-			int);
+			int
+		);
 	};
 
 /**
@@ -54,7 +55,8 @@ typedef struct fmt fmt_t;
 
 int _printf(
 	const char *format,
-	...);
+	...
+);
 int handle_print(
 	const char *fmt,
 	int *i,
@@ -63,7 +65,8 @@ int handle_print(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 
 /* FUNCTIONS */
 
@@ -74,21 +77,24 @@ int print_char(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 int print_string(
 	va_list types,
 	char buffer[],
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 int print_percent(
 	va_list types,
 	char buffer[],
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 
 /* Functions to print numbers */
 int print_int(
@@ -97,29 +103,35 @@ int print_int(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 int print_binary(
 	va_list types,
 	char buffer[],
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 /* Functions to handle other specifiers */
 int get_flags(
 	const char *format,
-	int *i);
+	int *i
+);
 int get_width(
 	const char *format,
 	int *i,
-	va_list list);
+	va_list list
+);
 int get_precision(
 	const char *format,
 	int *i,
-	va_list list);
+	va_list list
+);
 int get_size(
 	const char *format,
-	int *i);
+	int *i
+);
 
 /* Function to handle width */
 int handle_write_char(
@@ -129,7 +141,8 @@ int handle_write_char(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 int write_number(
 	int is_positive,
 	int ind,
@@ -137,7 +150,8 @@ int write_number(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 int write_num(
 	int ind,
 	char bff[],
@@ -146,7 +160,8 @@ int write_num(
 	int precision,
 	int length,
 	char padd,
-	char extra_c);
+	char extra_c
+);
 int write_unsgnd(
 	int is_negative,
 	int ind,
@@ -154,19 +169,24 @@ int write_unsgnd(
 	int flags,
 	int width,
 	int precision,
-	int size);
+	int size
+);
 
 /* UTILS */
 int is_printable(
-	char);
+	char
+);
 int is_digit(
-	char);
+	char
+);
 
 long int convert_size_number(
 	long int num,
-	int size);
+	int size
+);
 long int convert_size_unsgnd(
 	unsigned long int num,
-	int size);
+	int size
+);
 
 #endif /* MAIN_H */
