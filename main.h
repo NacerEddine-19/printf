@@ -6,8 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define UNUSED
-(x)(void)(x)
+#define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
 /* FLAGS */
@@ -28,17 +27,10 @@
 	 * @fn: The function associated
 	 */
 
-	struct fmt
+struct fmt
 {
 	char fmt;
-	int (
-		*fn)(
-		va_list,
-		char[],
-		int,
-		int,
-		int,
-		int);
+	int (*fn)(va_list, char[], int, int, int, int);
 };
 
 /**
